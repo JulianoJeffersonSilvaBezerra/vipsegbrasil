@@ -246,6 +246,11 @@ function abrirModulo(id) {
 
   // Marcar módulo como ativo na sidebar
   atualizarSidebarAtivo(id);
+  
+  // Fechar sidebar em mobile
+  if (window.innerWidth <= 768) {
+    fecharSidebar();
+  }
 }
 
 function marcarResposta(moduloId, perguntaIdx, respostaIdx) {
@@ -540,14 +545,21 @@ function fecharCertificado() {
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('sidebar-overlay');
+  const hamburger = document.getElementById('hamburger');
   
   sidebar.classList.toggle('aberto');
   overlay.classList.toggle('ativo');
+  hamburger.classList.toggle('ativo');
 }
 
 function fecharSidebar() {
-  document.getElementById('sidebar').classList.remove('aberto');
-  document.getElementById('sidebar-overlay').classList.remove('ativo');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  const hamburger = document.getElementById('hamburger');
+  
+  sidebar.classList.remove('aberto');
+  overlay.classList.remove('ativo');
+  hamburger.classList.remove('ativo');
 }
 
 function voltarParaLista() {

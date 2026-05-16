@@ -129,10 +129,17 @@ body {
   font-weight: 600;
   font-size: 0.95rem;
   transition: color 0.3s;
+  padding: 8px 16px;
 }
 
 .landing-nav a:hover {
   color: var(--cor-roxo);
+}
+
+@media (max-width: 900px) {
+  .landing-nav {
+    gap: 20px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -144,7 +151,7 @@ body {
 /* Hero Section */
 .landing-hero {
   background: linear-gradient(135deg, var(--cor-roxo) 0%, var(--cor-roxo-claro) 100%);
-  padding: 60px 20px;
+  padding: 40px 20px;
   text-align: center;
   color: rgb(255, 255, 255);
   min-height: 100vh;
@@ -156,6 +163,7 @@ body {
 .hero-content {
   max-width: 900px;
   animation: fadeInUp 0.8s ease;
+  width: 100%;
 }
 
 .landing-hero h1 {
@@ -197,6 +205,12 @@ body {
   background: #000;
   border-radius: var(--border-radius);
   overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .video-container {
+    max-width: 100%;
+  }
 }
 
 .video-container iframe {
@@ -522,6 +536,32 @@ body {
   overflow-y: auto;
 }
 
+@media (min-width: 769px) {
+  .sidebar {
+    position: static;
+    transform: none;
+    z-index: 200;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 280px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 201;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sidebar.aberto {
+    transform: translateX(0);
+  }
+}
+
 .sidebar-header {
   padding: 24px 20px;
   border-bottom: 1px solid var(--cor-sidebar-borda);
@@ -725,6 +765,13 @@ body {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 150;
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .sidebar-overlay.ativo {
+    display: block;
+  }
 }
 
 /* Conteúdo Principal */
@@ -733,6 +780,12 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .conteudo-principal {
+    width: 100%;
+  }
 }
 
 /* Topbar */
@@ -746,6 +799,17 @@ body {
   z-index: 100;
 }
 
+.topbar-space {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -753,7 +817,9 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .hamburger span {
@@ -762,6 +828,30 @@ body {
   background: var(--cor-roxo);
   border-radius: 2px;
   transition: var(--transition);
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .hamburger.ativo span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+  
+  .hamburger.ativo span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.ativo span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
 }
 
 .topbar-titulo {
@@ -852,6 +942,12 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+@media (max-width: 480px) {
+  .reel-player {
+    min-height: 400px;
+  }
 }
 
 .reel-player iframe {
@@ -1122,52 +1218,122 @@ body {
 @media (max-width: 1024px) {
   .sidebar {
     width: 240px;
-    border-top: 1px solid var(--cor-sidebar-borda);
+  }
+}
+
+@media (max-width: 900px) {
+  .landing-logo {
+    width: 120px;
+  }
+
+  .landing-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .beneficios-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
 }
 
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-    background: rgba(255, 255, 255, 0.42);
-    color: var(--cor-sidebar-texto);
-    border: 1px solid rgba(74, 8, 117, 0.16);
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 280px;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 201;
-    background: rgba(255, 255, 255, 0.62);
-
-  .sidebar.aberto {
-    transform: translateX(0);
+  .landing-header .container-landing {
+    gap: 16px;
   }
 
-  .sidebar-overlay.ativo {
-    display: block;
+  .landing-logo {
+    width: 100px;
   }
 
-  .conteudo-principal {
-    width: 100%;
+  .landing-hero {
+    padding: 30px 16px;
+    min-height: 80vh;
   }
 
   .landing-hero h1 {
     font-size: 2.2rem;
+    margin-bottom: 16px;
   }
 
-  .landing-beneficios h2,
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  .btn-principal {
+    padding: 14px 32px;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+
+  .landing-stats .container-landing {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .stat-numero {
+    font-size: 2.2rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+
+  .landing-beneficios {
+    padding: 50px 16px;
+  }
+
+  .landing-beneficios h2 {
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+  }
+
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .beneficio-card {
+    padding: 24px 20px;
+  }
+
+  .landing-comparacao {
+    padding: 50px 16px;
+  }
+
   .landing-comparacao h2 {
     font-size: 1.8rem;
+    margin-bottom: 32px;
+  }
+
+  .comparacao-table {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .comp-coluna.destaque {
+    transform: scale(1);
+  }
+
+  .landing-cadastro {
+    padding: 50px 16px;
   }
 
   .cadastro-card {
-    padding: 30px;
+    padding: 24px;
+    max-width: 100%;
+  }
+
+  .cadastro-card h2 {
+    font-size: 1.6rem;
   }
 
   .area-aula {
-    padding: 16px;
+    padding: 12px;
   }
 
   .aula-container {
@@ -1178,34 +1344,20 @@ body {
     border-radius: 12px;
   }
 
+  .reel-header {
+    padding: 16px;
+  }
+
   .reel-titulo {
     font-size: 1.2rem;
   }
 
-  @keyframes slideInLeft {
-    from {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .landing-hero h1 {
-    font-size: 1.8rem;
+  .reel-icone {
+    font-size: 2rem;
   }
 
-  .hero-subtitle {
-    font-size: 1.05rem;
-  }
-
-  .beneficios-grid,
-  .comparacao-table {
-    grid-template-columns: 1fr;
+  .quiz-container {
+    padding: 16px;
   }
 
   .topbar-titulo {
@@ -1216,12 +1368,208 @@ body {
     display: none;
   }
 
-  .cadastro-card {
+  .form-group input,
+  .form-group textarea,
+  .quiz-opcao {
+    font-size: 16px; /* Previne zoom no iPhone */
+  }
+
+  .btn-aula {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-logo {
+    width: 80px;
+  }
+
+  .landing-hero h1 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+
+  .video-reel-hero {
+    margin: 20px 0;
+  }
+
+  .video-container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .btn-principal {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  .landing-stats .container-landing {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stat-numero {
+    font-size: 2rem;
+  }
+
+  .landing-beneficios {
+    padding: 32px 16px;
+  }
+
+  .landing-beneficios h2 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  .beneficio-card {
+    padding: 16px;
+  }
+
+  .beneficio-icone {
+    font-size: 2.5rem;
+  }
+
+  .beneficio-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .beneficio-card p {
+    font-size: 0.9rem;
+  }
+
+  .landing-comparacao {
+    padding: 32px 16px;
+  }
+
+  .landing-comparacao h2 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  .comp-coluna {
     padding: 20px;
   }
 
-  .form-group input {
-    font-size: 16px; /* Previne zoom no iPhone */
+  .comp-coluna h3 {
+    font-size: 1.2rem;
+  }
+
+  .landing-cadastro {
+    padding: 32px 16px;
+  }
+
+  .cadastro-card {
+    padding: 16px;
+  }
+
+  .cadastro-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .cadastro-card > p {
+    font-size: 0.9rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+
+  .form-checkbox {
+    gap: 8px;
+  }
+
+  .form-checkbox label {
+    font-size: 0.8rem;
+  }
+
+  .btn-cadastrar {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .aula-container {
+    gap: 16px;
+  }
+
+  .quiz-container {
+    padding: 12px;
+  }
+
+  .quiz-titulo {
+    font-size: 1.1rem;
+  }
+
+  .quiz-pergunta {
+    font-size: 0.95rem;
+  }
+
+  .quiz-opcao {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .reel-numero {
+    font-size: 0.65rem;
+  }
+
+  .reel-titulo {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .reel-descricao {
+    font-size: 0.85rem;
+  }
+
+  .modal-content {
+    max-width: 95vw;
+  }
+
+  .certificado {
+    padding: 20px;
+  }
+
+  .cert-header {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cert-titulo {
+    font-size: 1.5rem;
+  }
+
+  .cert-nome {
+    font-size: 1.4rem;
+  }
+
+  .cert-info {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .acoes-aula {
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .btn-aula {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
   }
 }
 
@@ -1287,5 +1635,42 @@ body {
   .certificado {
     box-shadow: none;
     padding: 0;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   OTIMIZAÇÕES PARA TOUCH
+   ════════════════════════════════════════════════════════════ */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Desativar hover states em touch devices */
+  button,
+  a,
+  input[type="radio"],
+  input[type="checkbox"] {
+    cursor: pointer;
+  }
+  
+  /* Aumentar tamanho de tap targets */
+  button,
+  .btn-aula,
+  .quiz-opcao,
+  input[type="radio"],
+  input[type="checkbox"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Suporte para notch (safe-area) */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  .topbar {
+    padding-left: calc(16px + env(safe-area-inset-left));
+    padding-right: calc(16px + env(safe-area-inset-right));
   }
 }
