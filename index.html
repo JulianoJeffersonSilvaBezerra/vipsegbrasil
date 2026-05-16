@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Cor da guia do navegador (theme-color) -->
+  <meta name="theme-color" content="#D8B4FE" />
+  <title>VIPSEG Brasil - Treinamento de Consultores | Proteção Veicular</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TELA 1: LANDING PAGE / CAPTURA DE LEADS
+     ═══════════════════════════════════════════════════════════ -->
+<div id="tela-landing" class="tela-ativa">
+  
+  <!-- Topbar Landing -->
+  <header class="landing-header">
+    <div class="container-landing">
+      <div class="landing-logo">
+        <!-- Exemplo: use <picture> para alternar entre versão horizontal e vertical conforme largura -->
+        <picture>
+          <source media="(max-width:600px)" srcset="img/Vers%C3%A3o%20vertical.png">
+          <img src="img/Vers%C3%A3o%20horizontal.png" alt="VIPSEG Brasil" class="vipseg-logo">
+        </picture>
+
+        <!-- SVG original mantido como fallback (comentado) -->
+        <!--
+        <svg viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg" aria-label="VIPSEG Brasil">
+          <polygon points="2,8 18,8 27,38 36,8 52,8 35,60 19,60" fill="#6A0DAB"/>
+          <rect x="52" y="8" width="10" height="10" rx="2" fill="#FF6A00"/>
+          <rect x="62" y="8" width="9" height="52" rx="3" fill="#6A0DAB"/>
+          <path d="M76 8h22c10 0 16 6 16 15s-6 15-16 15H85v22H76V8z M85 30h13c5 0 8-3 8-7s-3-7-8-7H85v14z" fill="#6A0DAB"/>
+          <path d="M120 48c3 4 8 6 14 6 6 0 10-2 10-7 0-4-3-6-10-8-10-3-16-7-16-15 0-9 7-16 18-16 7 0 13 2 17 7l-7 6c-2-3-6-5-10-5-5 0-9 2-9 7 0 4 3 5 10 8 11 3 17 8 17 16 0 10-8 17-20 17-8 0-15-3-20-9l6-7z" fill="#6A0DAB"/>
+          <path d="M170 8h32v9h-23v12h20v9h-20v13h24v9h-33V8z" fill="#6A0DAB"/>
+          <path d="M218 36h-14v-9h23v28c-4 3-10 5-17 5-16 0-26-11-26-27s10-27 26-27c8 0 14 3 18 8l-7 7c-3-3-7-5-11-5-9 0-16 7-16 17s7 17 16 17c4 0 7-1 9-3V36h-1z" fill="#6A0DAB"/>
+          <text x="130" y="68" font-family="'Poppins',sans-serif" font-size="12" font-weight="700" fill="#6A0DAB">Brasil</text>
+        </svg>
+        -->
+      </div>
+      <nav class="landing-nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#ganhos">Ganhos</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section com Vídeo Reel -->
+  <section class="landing-hero">
+    <div class="hero-content">
+      <h1>Ganhe <span class="destaque">+R$3.000</span> por mês<br>sem sair do sofá</h1>
+      <p class="hero-subtitle">Proteção Veicular VIPSEG: Ganhos ilimitados, bônus semanais e receita recorrente de 6-10%</p>
+      
+      <!-- Vídeo Reel em destaque -->
+      <div class="video-reel-hero">
+        <div class="video-container">
+          <iframe width="100%" height="600" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ" title="VIPSEG Brasil - Ganhos Ilimitados" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- CTA Principal -->
+      <button class="btn-principal" onclick="scrollParaCadastro()">
+        🚀 Quero Ganhar Também
+      </button>
+    </div>
+  </section>
+
+  <!-- Estatísticas -->
+  <section class="landing-stats">
+    <div class="container-landing">
+      <div class="stat-item">
+        <div class="stat-numero">15</div>
+        <div class="stat-label">Placas para <br>+R$3.000/mês</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-numero">6-10%</div>
+        <div class="stat-label">Receita recorrente <br>das mensalidades</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-numero">∞</div>
+        <div class="stat-label">Ganhos <br>ilimitados</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-numero">Semanal</div>
+        <div class="stat-label">Bônus e <br>comissões</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Benefícios -->
+  <section class="landing-beneficios" id="beneficios">
+    <div class="container-landing">
+      <h2>Por que escolher VIPSEG?</h2>
+      <div class="beneficios-grid">
+        <div class="beneficio-card">
+          <div class="beneficio-icone">💼</div>
+          <h3>Flexibilidade Total</h3>
+          <p>Trabalhe quando quiser, de qualquer lugar. Sem horário fixo, sem chefe.</p>
+        </div>
+        <div class="beneficio-card">
+          <div class="beneficio-icone">💰</div>
+          <h3>Ganhos Ilimitados</h3>
+          <p>Quanto mais vender, mais ganha. Sem teto de comissão ou limite.</p>
+        </div>
+        <div class="beneficio-card">
+          <div class="beneficio-icone">📈</div>
+          <h3>Receita Recorrente</h3>
+          <p>Ganhe 6-10% mensais das adesões que você fechar, para sempre.</p>
+        </div>
+        <div class="beneficio-card">
+          <div class="beneficio-icone">🎁</div>
+          <h3>Bônus Semanais</h3>
+          <p>Alcance metas e receba bônus toda semana. Quanto mais, melhor!</p>
+        </div>
+        <div class="beneficio-card">
+          <div class="beneficio-icone">🤝</div>
+          <h3>Indicação (MGM)</h3>
+          <p>Indique consultores e ganhe comissão sobre as vendas deles.</p>
+        </div>
+        <div class="beneficio-card">
+          <div class="beneficio-icone">📱</div>
+          <h3>100% Digital</h3>
+          <p>Treinamento online, aulas em vídeo rápido, tudo no seu celular.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparação CLT vs VIPSEG -->
+  <section class="landing-comparacao">
+    <div class="container-landing">
+      <h2>CLT vs Consultoria VIPSEG</h2>
+      <div class="comparacao-table">
+        <div class="comp-coluna">
+          <h3>❌ Emprego CLT</h3>
+          <div class="comp-item">Salário fixo limitado</div>
+          <div class="comp-item">Horário rígido 8-17h</div>
+          <div class="comp-item">Chefe cobrando</div>
+          <div class="comp-item">Sem ganho recorrente</div>
+          <div class="comp-item">Sem liberdade</div>
+          <div class="comp-item">Sem bônus</div>
+        </div>
+        <div class="comp-coluna destaque">
+          <h3>✅ VIPSEG Brasil</h3>
+          <div class="comp-item">Ganhos ilimitados</div>
+          <div class="comp-item">Flexibilidade total</div>
+          <div class="comp-item">Você é o patrão</div>
+          <div class="comp-item">6-10% vida toda</div>
+          <div class="comp-item">Trabalhe do sofá</div>
+          <div class="comp-item">Bônus semanal</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulário de Cadastro -->
+  <section class="landing-cadastro" id="cadastro">
+    <div class="container-landing">
+      <div class="cadastro-card">
+        <h2>Comece Agora — Grátis e Rápido</h2>
+        <p>Preencha os 3 campos abaixo e comece o treinamento imediatamente.</p>
+        
+        <div class="form-wrapper">
+          <div class="form-group">
+            <label for="nome-landing">Nome Completo</label>
+            <input type="text" id="nome-landing" placeholder="Seu nome" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="telefone-landing">WhatsApp / Telefone</label>
+            <input type="tel" id="telefone-landing" placeholder="(00) 00000-0000" autocomplete="tel" />
+          </div>
+          <div class="form-group">
+            <label for="email-landing">E-mail</label>
+            <input type="email" id="email-landing" placeholder="seu@email.com" autocomplete="email" />
+          </div>
+
+          <div class="form-checkbox">
+            <input type="checkbox" id="termos" checked>
+            <label for="termos">Concordo em receber atualizações e ofertas VIPSEG por WhatsApp</label>
+          </div>
+
+          <button class="btn-cadastrar" onclick="iniciarTreinamento()">
+            ✅ Entrar no Treinamento → 
+          </button>
+
+          <p class="form-nota">Seus dados são privados e salvos localmente. Sem spam, sem venda de dados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Landing -->
+  <footer class="landing-footer">
+    <div class="container-landing">
+      <p>&copy; 2024 VIPSEG Brasil. Todos os direitos reservados.</p>
+      <p>CNPJ 36.684.733/0001-30 • Rua da Inovação, 1000 • São Paulo, SP</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TELA 2: INTERFACE DE TREINAMENTO (MOBILE-FIRST)
+     ═══════════════════════════════════════════════════════════ -->
+<div id="tela-treinamento" class="hidden">
+  
+  <!-- Sidebar Lateral (Desktop) -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <!-- Logo da VIPSEG (imagem colocada em img/) -->
+      <img src="img/Vers%C3%A3o%20horizontal.png" alt="VIPSEG Brasil" class="sidebar-logo-img">
+
+      <div class="sidebar-user">
+        <div class="user-avatar" id="user-avatar">?</div>
+        <div class="user-info">
+          <div class="user-name" id="user-name">Consultor</div>
+          <div class="user-role">Em treinamento</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barra de Progresso -->
+    <div class="sidebar-progresso">
+      <div class="sidebar-progresso-label">Progresso</div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-text" id="progress-text">0%</div>
+    </div>
+
+    <!-- Navegação de Módulos -->
+    <nav class="sidebar-nav" id="sidebar-nav">
+      <!-- Renderizado pelo JS -->
+    </nav>
+
+    <!-- Botão Sair -->
+    <div class="sidebar-footer">
+      <button class="btn-sair" onclick="if(confirm('Deseja sair? Seu progresso será salvo.')){voltarParaLanding()}">
+        🚪 Sair
+      </button>
+    </div>
+  </aside>
+
+  <!-- Overlay para fechar sidebar -->
+  <div class="sidebar-overlay" id="sidebar-overlay" onclick="fecharSidebar()"></div>
+
+  <!-- Conteúdo Principal -->
+  <div class="conteudo-principal">
+    
+    <!-- Topbar Mobile -->
+    <header class="topbar">
+      <button class="hamburger" id="hamburger" onclick="toggleSidebar()">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="topbar-titulo">Treinamento VIPSEG</div>
+      <div class="topbar-space"></div>
+    </header>
+
+    <!-- Área de Aula (Estilo Reel) -->
+    <main class="area-aula" id="area-aula">
+      <!-- Renderizado dinamicamente -->
+    </main>
+  </div>
+</div>
+
+<!-- Certificado Modal -->
+<div id="modal-certificado" class="modal hidden">
+  <div class="modal-content">
+    <button class="modal-close" onclick="fecharCertificado()">×</button>
+    <div id="certificado-renderizado"></div>
+  </div>
+</div>
+
+<script src="dados.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
